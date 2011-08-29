@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C05A19C06CAA52B00D84F6F /* GetMetadataForFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GetMetadataForFile.c */; };
-		8203C57210149D69003C76B3 /* FITSImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* FITSImporter.mdimporter */; };
+		6352CCB2140C1E9900BE3464 /* FITSImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* FITSImporter.mdimporter */; };
 		8203C58E10149F12003C76B3 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = C88FB7E30674480E006EBB30 /* schema.strings */; };
 		8203C58F10149F12003C76B3 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = C88FB7D7067446EC006EBB30 /* schema.xml */; };
 		82EEE8F61073A6FB00637B88 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EEE8F51073A6FB00637B88 /* libqfits.a */; };
@@ -37,13 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8203C58510149D7E003C76B3 /* CopyFiles */ = {
+		6352CCB1140C1E7500BE3464 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = /Library/Spotlight;
+			buildActionMask = 2147483647;
+			dstPath = "$(HOME)/Library/Spotlight";
 			dstSubfolderSpec = 0;
 			files = (
-				8203C57210149D69003C76B3 /* FITSImporter.mdimporter in CopyFiles */,
+				6352CCB2140C1E9900BE3464 /* FITSImporter.mdimporter in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,8 @@
 				8D57630F048677EA00EA77CD /* Resources */,
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
-				8203C58510149D7E003C76B3 /* CopyFiles */,
+				6352CCB1140C1E7500BE3464 /* CopyFiles */,
+				6352CCB3140C1EBE00BE3464 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -227,8 +228,11 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = 70138C880896BE9A00968C2F /* Build configuration list for PBXProject "FITSImporter" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -255,6 +259,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6352CCB3140C1EBE00BE3464 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D576311048677EA00EA77CD /* Sources */ = {
@@ -325,7 +345,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/qfits";
-				INSTALL_PATH = /Library/Spotlight;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/qfits";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
@@ -342,7 +361,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/qfits";
-				INSTALL_PATH = /Library/Spotlight;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/qfits";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
