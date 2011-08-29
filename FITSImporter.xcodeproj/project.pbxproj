@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C05A19C06CAA52B00D84F6F /* GetMetadataForFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GetMetadataForFile.c */; };
+		8203C57210149D69003C76B3 /* FITSImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* FITSImporter.mdimporter */; };
+		8203C58E10149F12003C76B3 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = C88FB7E30674480E006EBB30 /* schema.strings */; };
+		8203C58F10149F12003C76B3 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = C88FB7D7067446EC006EBB30 /* schema.xml */; };
+		82EEE8F61073A6FB00637B88 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EEE8F51073A6FB00637B88 /* libqfits.a */; };
+		82EEE90F1073A76600637B88 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE8FD1073A76600637B88 /* config.h */; };
+		82EEE9101073A76600637B88 /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE8FE1073A76600637B88 /* md5.h */; };
+		82EEE9111073A76600637B88 /* qfits_byteswap.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE8FF1073A76600637B88 /* qfits_byteswap.h */; };
+		82EEE9121073A76600637B88 /* qfits_cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9001073A76600637B88 /* qfits_cache.h */; };
+		82EEE9131073A76600637B88 /* qfits_card.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9011073A76600637B88 /* qfits_card.h */; };
+		82EEE9141073A76600637B88 /* qfits_error.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9021073A76600637B88 /* qfits_error.h */; };
+		82EEE9151073A76600637B88 /* qfits_filename.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9031073A76600637B88 /* qfits_filename.h */; };
+		82EEE9161073A76600637B88 /* qfits_float.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9041073A76600637B88 /* qfits_float.h */; };
+		82EEE9171073A76600637B88 /* qfits_header.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9051073A76600637B88 /* qfits_header.h */; };
+		82EEE9181073A76600637B88 /* qfits_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9061073A76600637B88 /* qfits_image.h */; };
+		82EEE9191073A76600637B88 /* qfits_md5.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9071073A76600637B88 /* qfits_md5.h */; };
+		82EEE91A1073A76600637B88 /* qfits_memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9081073A76600637B88 /* qfits_memory.h */; };
+		82EEE91B1073A76600637B88 /* qfits_rw.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE9091073A76600637B88 /* qfits_rw.h */; };
+		82EEE91C1073A76600637B88 /* qfits_std.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE90A1073A76600637B88 /* qfits_std.h */; };
+		82EEE91D1073A76600637B88 /* qfits_table.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE90B1073A76600637B88 /* qfits_table.h */; };
+		82EEE91E1073A76600637B88 /* qfits_time.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE90C1073A76600637B88 /* qfits_time.h */; };
+		82EEE91F1073A76600637B88 /* qfits_tools.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE90D1073A76600637B88 /* qfits_tools.h */; };
+		82EEE9201073A76600637B88 /* qfits.h in Headers */ = {isa = PBXBuildFile; fileRef = 82EEE90E1073A76600637B88 /* qfits.h */; };
+		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
+		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
+		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
+		C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B05260671AA6E00DD9006 /* CoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8203C58510149D7E003C76B3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = /Library/Spotlight;
+			dstSubfolderSpec = 0;
+			files = (
+				8203C57210149D69003C76B3 /* FITSImporter.mdimporter in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		2C05A19B06CAA52B00D84F6F /* GetMetadataForFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GetMetadataForFile.c; sourceTree = "<group>"; };
+		82DAAB6210188B8F00B754D6 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/schema.strings; sourceTree = "<group>"; };
+		82DAAB7E1018957E00B754D6 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82EEE8F51073A6FB00637B88 /* libqfits.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqfits.a; path = ../qfits/build/Debug/libqfits.a; sourceTree = SOURCE_ROOT; };
+		82EEE8FD1073A76600637B88 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../qfits/src/config.h; sourceTree = SOURCE_ROOT; };
+		82EEE8FE1073A76600637B88 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = md5.h; path = ../qfits/src/md5.h; sourceTree = SOURCE_ROOT; };
+		82EEE8FF1073A76600637B88 /* qfits_byteswap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_byteswap.h; path = ../qfits/src/qfits_byteswap.h; sourceTree = SOURCE_ROOT; };
+		82EEE9001073A76600637B88 /* qfits_cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_cache.h; path = ../qfits/src/qfits_cache.h; sourceTree = SOURCE_ROOT; };
+		82EEE9011073A76600637B88 /* qfits_card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_card.h; path = ../qfits/src/qfits_card.h; sourceTree = SOURCE_ROOT; };
+		82EEE9021073A76600637B88 /* qfits_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_error.h; path = ../qfits/src/qfits_error.h; sourceTree = SOURCE_ROOT; };
+		82EEE9031073A76600637B88 /* qfits_filename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_filename.h; path = ../qfits/src/qfits_filename.h; sourceTree = SOURCE_ROOT; };
+		82EEE9041073A76600637B88 /* qfits_float.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_float.h; path = ../qfits/src/qfits_float.h; sourceTree = SOURCE_ROOT; };
+		82EEE9051073A76600637B88 /* qfits_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_header.h; path = ../qfits/src/qfits_header.h; sourceTree = SOURCE_ROOT; };
+		82EEE9061073A76600637B88 /* qfits_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_image.h; path = ../qfits/src/qfits_image.h; sourceTree = SOURCE_ROOT; };
+		82EEE9071073A76600637B88 /* qfits_md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_md5.h; path = ../qfits/src/qfits_md5.h; sourceTree = SOURCE_ROOT; };
+		82EEE9081073A76600637B88 /* qfits_memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_memory.h; path = ../qfits/src/qfits_memory.h; sourceTree = SOURCE_ROOT; };
+		82EEE9091073A76600637B88 /* qfits_rw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_rw.h; path = ../qfits/src/qfits_rw.h; sourceTree = SOURCE_ROOT; };
+		82EEE90A1073A76600637B88 /* qfits_std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_std.h; path = ../qfits/src/qfits_std.h; sourceTree = SOURCE_ROOT; };
+		82EEE90B1073A76600637B88 /* qfits_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_table.h; path = ../qfits/src/qfits_table.h; sourceTree = SOURCE_ROOT; };
+		82EEE90C1073A76600637B88 /* qfits_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_time.h; path = ../qfits/src/qfits_time.h; sourceTree = SOURCE_ROOT; };
+		82EEE90D1073A76600637B88 /* qfits_tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits_tools.h; path = ../qfits/src/qfits_tools.h; sourceTree = SOURCE_ROOT; };
+		82EEE90E1073A76600637B88 /* qfits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qfits.h; path = ../qfits/src/qfits.h; sourceTree = SOURCE_ROOT; };
+		8D576316048677EA00EA77CD /* FITSImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FITSImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C86B05260671AA6E00DD9006 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		C88FB7D7067446EC006EBB30 /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		C88FB7DB0674470F006EBB30 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/schema.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D576313048677EA00EA77CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */,
+				C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */,
+				82EEE8F61073A6FB00637B88 /* libqfits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* FITSImporter */ = {
+			isa = PBXGroup;
+			children = (
+				8203C6071014A56D003C76B3 /* qfits */,
+				08FB77AFFE84173DC02AAC07 /* Source */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
+				19C28FB6FE9D52B211CA2CBB /* Products */,
+			);
+			name = FITSImporter;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				C86B05260671AA6E00DD9006 /* CoreServices.framework */,
+				0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */,
+				82EEE8F51073A6FB00637B88 /* libqfits.a */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C88FB7E30674480E006EBB30 /* schema.strings */,
+				C88FB7D7067446EC006EBB30 /* schema.xml */,
+				8D576317048677EA00EA77CD /* Info.plist */,
+				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2C05A19B06CAA52B00D84F6F /* GetMetadataForFile.c */,
+				08FB77B6FE84183AC02AAC07 /* main.c */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		19C28FB6FE9D52B211CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D576316048677EA00EA77CD /* FITSImporter.mdimporter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8203C6071014A56D003C76B3 /* qfits */ = {
+			isa = PBXGroup;
+			children = (
+				82EEE8FD1073A76600637B88 /* config.h */,
+				82EEE8FE1073A76600637B88 /* md5.h */,
+				82EEE8FF1073A76600637B88 /* qfits_byteswap.h */,
+				82EEE9001073A76600637B88 /* qfits_cache.h */,
+				82EEE9011073A76600637B88 /* qfits_card.h */,
+				82EEE9021073A76600637B88 /* qfits_error.h */,
+				82EEE9031073A76600637B88 /* qfits_filename.h */,
+				82EEE9041073A76600637B88 /* qfits_float.h */,
+				82EEE9051073A76600637B88 /* qfits_header.h */,
+				82EEE9061073A76600637B88 /* qfits_image.h */,
+				82EEE9071073A76600637B88 /* qfits_md5.h */,
+				82EEE9081073A76600637B88 /* qfits_memory.h */,
+				82EEE9091073A76600637B88 /* qfits_rw.h */,
+				82EEE90A1073A76600637B88 /* qfits_std.h */,
+				82EEE90B1073A76600637B88 /* qfits_table.h */,
+				82EEE90C1073A76600637B88 /* qfits_time.h */,
+				82EEE90D1073A76600637B88 /* qfits_tools.h */,
+				82EEE90E1073A76600637B88 /* qfits.h */,
+			);
+			name = qfits;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D57630E048677EA00EA77CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82EEE90F1073A76600637B88 /* config.h in Headers */,
+				82EEE9101073A76600637B88 /* md5.h in Headers */,
+				82EEE9111073A76600637B88 /* qfits_byteswap.h in Headers */,
+				82EEE9121073A76600637B88 /* qfits_cache.h in Headers */,
+				82EEE9131073A76600637B88 /* qfits_card.h in Headers */,
+				82EEE9141073A76600637B88 /* qfits_error.h in Headers */,
+				82EEE9151073A76600637B88 /* qfits_filename.h in Headers */,
+				82EEE9161073A76600637B88 /* qfits_float.h in Headers */,
+				82EEE9171073A76600637B88 /* qfits_header.h in Headers */,
+				82EEE9181073A76600637B88 /* qfits_image.h in Headers */,
+				82EEE9191073A76600637B88 /* qfits_md5.h in Headers */,
+				82EEE91A1073A76600637B88 /* qfits_memory.h in Headers */,
+				82EEE91B1073A76600637B88 /* qfits_rw.h in Headers */,
+				82EEE91C1073A76600637B88 /* qfits_std.h in Headers */,
+				82EEE91D1073A76600637B88 /* qfits_table.h in Headers */,
+				82EEE91E1073A76600637B88 /* qfits_time.h in Headers */,
+				82EEE91F1073A76600637B88 /* qfits_tools.h in Headers */,
+				82EEE9201073A76600637B88 /* qfits.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D57630D048677EA00EA77CD /* FITSImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70138C840896BE9A00968C2F /* Build configuration list for PBXNativeTarget "FITSImporter" */;
+			buildPhases = (
+				8D57630E048677EA00EA77CD /* Headers */,
+				8D57630F048677EA00EA77CD /* Resources */,
+				8D576311048677EA00EA77CD /* Sources */,
+				8D576313048677EA00EA77CD /* Frameworks */,
+				8D576315048677EA00EA77CD /* Rez */,
+				8203C58510149D7E003C76B3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FITSImporter;
+			productInstallPath = /Library/Spotlight;
+			productName = FITSImporter;
+			productReference = 8D576316048677EA00EA77CD /* FITSImporter.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 70138C880896BE9A00968C2F /* Build configuration list for PBXProject "FITSImporter" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* FITSImporter */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D57630D048677EA00EA77CD /* FITSImporter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D57630F048677EA00EA77CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8203C58E10149F12003C76B3 /* schema.strings in Resources */,
+				8203C58F10149F12003C76B3 /* schema.xml in Resources */,
+				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D576315048677EA00EA77CD /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D576311048677EA00EA77CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D576312048677EA00EA77CD /* main.c in Sources */,
+				2C05A19C06CAA52B00D84F6F /* GetMetadataForFile.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8D5B49A704867FD3000E48DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+				82DAAB7E1018957E00B754D6 /* French */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C88FB7E30674480E006EBB30 /* schema.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C88FB7DB0674470F006EBB30 /* English */,
+				82DAAB6210188B8F00B754D6 /* French */,
+			);
+			name = schema.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70138C850896BE9A00968C2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/Spotlight;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Dropbox/QLFits/qfits\"",
+					"\"$(SRCROOT)/qfits\"",
+					"\"$(SRCROOT)/../qfits/build/Debug\"",
+				);
+				PRODUCT_NAME = FITSImporter;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		70138C860896BE9A00968C2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				CURRENT_PROJECT_VERSION = 1.0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/Spotlight;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Dropbox/QLFits/qfits\"",
+					"\"$(SRCROOT)/qfits\"",
+					"\"$(SRCROOT)/../qfits/build/Debug\"",
+				);
+				PRODUCT_NAME = FITSImporter;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+		70138C890896BE9A00968C2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		70138C8A0896BE9A00968C2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Library/Spotlight;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.5;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70138C840896BE9A00968C2F /* Build configuration list for PBXNativeTarget "FITSImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70138C850896BE9A00968C2F /* Debug */,
+				70138C860896BE9A00968C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70138C880896BE9A00968C2F /* Build configuration list for PBXProject "FITSImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70138C890896BE9A00968C2F /* Debug */,
+				70138C8A0896BE9A00968C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

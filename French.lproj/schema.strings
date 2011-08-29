@@ -1,0 +1,70 @@
+﻿/* ----------
+ 
+ 
+ This file is only needed if you are defining a custom importer attribute.  
+ Most importer plugins will not need to do this.  
+ Add this file to your project's localized resources if you have defined a custom attribute. 
+ 
+ 
+ ----------*/
+
+
+/* Localized DisplayNames for your custom metadata attributes */
+/* The form is:  "myMetadataKey" = "My Metadata Key";    */
+/* The name on the left is the name defined in schema.xml */
+/* The name on the right is what the user will see */
+"gov_nasa_gsfc_fits_TargetName"			= "Nom de la cible";
+"gov_nasa_gsfc_fits_Naxis"				= "Naxis";
+"gov_nasa_gsfc_fits_Naxis1"				= "Naxis1";
+"gov_nasa_gsfc_fits_Naxis2"				= "Naxis2";
+"gov_nasa_gsfc_fits_DateObs"			= "Date d'observation";
+"gov_nasa_gsfc_fits_Exptime"			= "Temps d'exposition";
+"gov_nasa_gsfc_fits_Instrument"			= "Instrument";
+"gov_nasa_gsfc_fits_Detector"			= "Détector";
+"gov_nasa_gsfc_fits_Telescope"			= "Télescope";
+"gov_nasa_gsfc_fits_Observatory"		= "Observatoire";
+"gov_nasa_gsfc_fits_Observer"			= "Observateur";
+"gov_nasa_gsfc_fits_RightAscension"		= "Ascension droite";
+"gov_nasa_gsfc_fits_Declination"		= "Déclinaison";
+"gov_nasa_gsfc_fits_Equinox"			= "Equinoxe";
+"gov_nasa_gsfc_fits_Epoch"				= "Epoque";
+"gov_nasa_gsfc_fits_RaDecSystem"		= "Système RADec";
+"gov_nasa_gsfc_fits_LocalSiderealTime"	= "Temps Sidéral Local";
+"gov_nasa_gsfc_fits_UniversalTime"		= "Temps universel";
+"gov_nasa_gsfc_fits_Airmass"			= "Masse d'air";
+"gov_nasa_gsfc_fits_BZero"				= "BZero";
+"gov_nasa_gsfc_fits_BScale"				= "BScale";
+"gov_nasa_gsfc_fits_Bitpix"				= "Bitpix";
+"gov_nasa_gsfc_fits_ArchiveFilename"	= "Nom de fichier dans l'archive";
+"gov_nasa_gsfc_fits_MJDObs"				= "MJD";
+"gov_nasa_gsfc_fits_JulianDate"			= "Date Julienne";
+
+/* Localized Description of you custom metadata attributes */
+/* The form is: "myMetadataKey.Description" = "stuff";
+/* com_Foo_YourAttrName should be definded in the schema.xml file  */
+/* The value on the right will be displayed by the Finder etc.. */
+"gov_nasa_gsfc_fits_TargetName.Description"			= "Nom de la cible";
+"gov_nasa_gsfc_fits_Naxis.Description"				= "Nombre d'axes de l'image";
+"gov_nasa_gsfc_fits_Naxis1.Description"				= "Taille de l'axe 1";
+"gov_nasa_gsfc_fits_Naxis2.Description"				= "Taille de l'axe 2";
+"gov_nasa_gsfc_fits_DateObs.Description"			= "Date d'observation";
+"gov_nasa_gsfc_fits_Exptime.Description"			= "Temps d'exposition";
+"gov_nasa_gsfc_fits_Instrument.Description"			= "Nom de l'instrument";
+"gov_nasa_gsfc_fits_Detector.Description"			= "Nom du détecteur";
+"gov_nasa_gsfc_fits_Telescope.Description"			= "Nom du télescope";
+"gov_nasa_gsfc_fits_Observatory.Description"		= "Nom de l'observatoire";
+"gov_nasa_gsfc_fits_Observer.Description"			= "Observer(s) name(s)";
+"gov_nasa_gsfc_fits_RightAscension.Description"		= "Ascension drtoite de la cible";
+"gov_nasa_gsfc_fits_Declination.Description"		= "Déclinaison de la cible";
+"gov_nasa_gsfc_fits_Equinox.Description"			= "Equinoxe de l'observation";
+"gov_nasa_gsfc_fits_Epoch.Description"				= "Epoque de l'observation";
+"gov_nasa_gsfc_fits_RaDecSystem.Description"		= "Type de système RADec";
+"gov_nasa_gsfc_fits_LocalSiderealTime.Description"	= "Temps sidéral local";
+"gov_nasa_gsfc_fits_UniversalTime.Description"		= "Temps universel";
+"gov_nasa_gsfc_fits_Airmass.Description"			= "Masse d'air";
+"gov_nasa_gsfc_fits_BZero.Description"				= "BZero";
+"gov_nasa_gsfc_fits_BScale.Description"				= "BScale";
+"gov_nasa_gsfc_fits_Bitpix.Description"				= "Nombre de bit par pixels";
+"gov_nasa_gsfc_fits_ArchiveFilename.Description"	= "Nom de fichier dans l'archive ESO";
+"gov_nasa_gsfc_fits_MJDObs.Description"				= "Date Julienne Modifiée de l'observation";
+"gov_nasa_gsfc_fits_JulianDate.Description"			= "Date Julienne";
