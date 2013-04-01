@@ -11,6 +11,12 @@ It has been originally developed by Cédric Foellmi (Soft Tenebras Lux).
 The following command line is run at the end of the Xcoce build phase to ensure the FITSImporter is taken into account:
 
     /usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter
+    
+If you downloaded the binary directly, put it in:
+
+    ${HOME}/Library/Spotlight
+    
+and then run the above command in your Terminal.
 
 Once done, you can look for FITS files in your drive using Spotlight.
 
