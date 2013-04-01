@@ -5,6 +5,9 @@ FITSImporter is a OSX Spotlight plugin for FITS (Flexible Image transport System
 
 It has been originally developed by Cédric Foellmi (Soft Tenebras Lux). 
 
+[Direct download](http://www.softtenebraslux.com/download.php?software=fitsimporter) (from the SoftTenebrasLux' website).
+
+
 The following command line is run at the end of the Xcoce build phase to ensure the FITSImporter is taken into account:
 
     /usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter
