@@ -230,6 +230,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = onekilopars.ec;
 			};
 			buildConfigurationList = 70138C880896BE9A00968C2F /* Build configuration list for PBXProject "FITSImporter" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -272,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter";
+			shellScript = "touch ${HOME}/Library/Spotlight/FITSImporter.mdimporter\n/usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -313,6 +314,7 @@
 		70138C850896BE9A00968C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
@@ -324,6 +326,7 @@
 		70138C860896BE9A00968C2F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CURRENT_PROJECT_VERSION = 1.0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
