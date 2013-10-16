@@ -25,20 +25,6 @@
 #include <CoreServices/CoreServices.h> 
 #include "qfits.h"
 
-/* ------------------------------------------------------------------------------------------------------
-
-getCleanedHeaderValue: read FITS header and return striped CFStringRef value.
-
------------------------------------------------------------------------------------------------------- */
-CFStringRef concatWithT(CFStringRef str1, CFStringRef str2) {
-	CFIndex length = CFStringGetLength(str1) + CFStringGetLength(str2) + 1;
-	CFMutableStringRef cfmvalue = CFStringCreateMutable(kCFAllocatorDefault, length);
-	CFStringAppend(cfmvalue, str1);
-	CFStringAppend(cfmvalue, CFSTR("T"));
-	CFStringAppend(cfmvalue, str2);
-	return cfmvalue;
-}
-
 
 /* ------------------------------------------------------------------------------------------------------
 
@@ -55,6 +41,7 @@ CFStringRef getCleanedHeaderValue(const char* filename, char* keyword) {
 		CFIndex length = CFStringGetLength(cfvalue);
 		CFMutableStringRef cfmvalue = CFStringCreateMutable(kCFAllocatorDefault, length);
 		CFStringAppend(cfmvalue, cfvalue);		
+		CFRelease(cfvalue);
 		CFStringTrim(cfmvalue, CFSTR("'"));
 		CFStringTrimWhitespace(cfmvalue);
 		return cfmvalue;
@@ -75,32 +62,45 @@ void SetDateValueFromFITSHeader(const char* filename,
 				char* secondaryKeyword1,
 				char* secondaryKeyword2)
 {
+	CFMutableStringRef headerValue = CFStringCreateMutable(kCFAllocatorDefault, (CFIndex)80);
+
 	CFStringRef value1 = getCleanedHeaderValue(filename, mainKeyword);
-	CFStringRef value2 = getCleanedHeaderValue(filename, secondaryKeyword1);
-	CFStringRef value3 = getCleanedHeaderValue(filename, secondaryKeyword2);
-	CFStringRef headerValue = NULL;
 	if (value1 != NULL) {
-		if ((CFStringGetLength(value1) >= 19) || (CFStringGetLength(value1) == 10)) {
-			headerValue = value1;
-		} 
-	}
-	if (value2 != NULL) {
-		if (headerValue != NULL) {
-			if ((CFStringGetLength(headerValue) < 19) && (CFStringGetLength(value2) >= 19)) {
-				headerValue = value2;
-			}		
-		} else if (CFStringGetLength(value2) >= 10) {
-			headerValue = value2;
+		CFIndex valueLength1 = CFStringGetLength(value1);
+		if ((valueLength1 >= 19) || (valueLength1 == 10)) {
+			CFStringAppend(headerValue, value1); // value of mainKeyword looks OK.
 		}
+		CFRelease(value1);
 	}
+
+	CFStringRef value2 = getCleanedHeaderValue(filename, secondaryKeyword1);
+	if (value2 != NULL) {
+		CFIndex valueLength2 = CFStringGetLength(value2);
+		CFIndex headerValueLength = CFStringGetLength(headerValue);
+		if (headerValueLength == 0 && valueLength2 >= 10) {
+			CFStringAppend(headerValueLength, value2); // Append value of secondaryKeyword1
+		}
+		else if (headerValueLength < 19 && valueLength2 >= 19) {
+			CFRange range = CFRangeMake(0, headerValueLength);
+			CFStringDelete(headerValue, range);
+			CFStringAppend(headerValue, value2); // Replace value of current headerValue by value of secondaryKeyword1
+		}
+		CFRelease(value2);
+	}
+
+	CFStringRef value3 = getCleanedHeaderValue(filename, secondaryKeyword2);
 	if (value3 != NULL) {
 		CFRange r = CFStringFind(value3, CFSTR(":"), 0);
-		if ((headerValue != NULL) && (CFStringGetLength(headerValue) == 10) && (r.location != kCFNotFound)) {
-			headerValue = concatWithT(headerValue, value3);
+		CFIndex headerValueLength = CFStringGetLength(headerValue);
+		if (headerValueLength == 10 && r.location != kCFNotFound) {
+			CFStringAppend(headerValue, CFSTR("T"));
+			CFStringAppend(headerValue, value3);
 		}
+		CFRelease(value3);
 	}
-	
-	if (headerValue != NULL) {
+
+	CFIndex headerValueLength = CFStringGetLength(headerValue);
+	if (headerValueLength > 0) {
 		
 		CFArrayRef tArray   = CFStringCreateArrayBySeparatingStrings(kCFAllocatorDefault, headerValue, CFSTR("T"));
 		CFArrayRef ymdArray = CFStringCreateArrayBySeparatingStrings(kCFAllocatorDefault, CFArrayGetValueAtIndex(tArray, 0), CFSTR("-"));
@@ -119,6 +119,8 @@ void SetDateValueFromFITSHeader(const char* filename,
 		if (CFStringGetLength(CFArrayGetValueAtIndex(ymdArray, 2)) > 0) {
 			gregDate.day    = CFStringGetIntValue(CFArrayGetValueAtIndex(ymdArray, 2));
 		}
+		CFRelease(ymdArray);
+
 		gregDate.hour   = 0;
 		gregDate.minute = 0;
 		gregDate.second = 0.;
@@ -135,7 +137,10 @@ void SetDateValueFromFITSHeader(const char* filename,
 			if (CFStringGetLength(CFArrayGetValueAtIndex(hmsArray, 2)) > 0) {
 				gregDate.second = CFStringGetDoubleValue(CFArrayGetValueAtIndex(hmsArray, 2));			
 			}
+			CFRelease(hmsArray);
 		}
+
+		CFRelease(tArray);
 
 //		printf("%i %i %i %i %i %f\n\n", gregDate.year, gregDate.month, gregDate.day, gregDate.hour, gregDate.minute, gregDate.second);
 
@@ -144,10 +149,18 @@ void SetDateValueFromFITSHeader(const char* filename,
 			CFAbsoluteTime absTime = CFGregorianDateGetAbsoluteTime(gregDate, timeZone);
 			CFDateRef date = CFDateCreate(kCFAllocatorDefault, absTime);
 
+			if (timeZone != NULL) {
+				CFRelease(timeZone);
+			}
+
 			CFStringRef cfImporterAttrName = CFStringCreateWithCString(kCFAllocatorDefault, importerAttrName, kCFStringEncodingUTF8);
 			CFDictionaryAddValue(attributes, cfImporterAttrName, date);
+			CFRelease(cfImporterAttrName);
+			CFRelease(date);
 		}
 	}
+
+	CFRelease(headerValue);
 }
 
 
@@ -170,6 +183,8 @@ void SetStringValueFromFITSHeader(const char* filename,
 	if (headerValue != NULL) {		
 		CFStringRef cfImporterAttrName = CFStringCreateWithCString(kCFAllocatorDefault, importerAttrName, kCFStringEncodingUTF8);
 		CFDictionaryAddValue(attributes, cfImporterAttrName, headerValue);
+		CFRelease(headerValue);
+		CFRelease(cfImporterAttrName);
 	}
 }
 
@@ -203,14 +218,22 @@ void SetNumberValueFromFITSHeader(const char* filename,
 				number = sign * ( abs(CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 0))) + 
 									  CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 1)) / 60 + 
 									  CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 2)) / 3600 );
+
 			}
-		} else {
+
+			CFRelease(dmsArray);
+		}
+		else {
 			number = CFStringGetDoubleValue(headerValue);			
 		}
 
 		CFNumberRef value = CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &number);
 		CFStringRef cfImporterAttrName = CFStringCreateWithCString(kCFAllocatorDefault, importerAttrName, kCFStringEncodingUTF8);
 		CFDictionaryAddValue(attributes, cfImporterAttrName, value);
+		CFRelease(value);
+		CFRelease(cfImporterAttrName);
+
+		CFRelease(headerValue);
 	}
 }
 
@@ -242,6 +265,7 @@ Boolean GetMetadataForFile(void* thisInterface,
     fp = fopen(filename, "r");
     if (fp == NULL) {
 		printf("[FITSImporter] File '%s' does not exist. Error %i\n", filename, errno);
+		free(filename);
         return false;
     }
 
@@ -279,7 +303,7 @@ Boolean GetMetadataForFile(void* thisInterface,
 	// ----- STANDARD kMDItemKind;	
 	CFStringRef cfvalue = CFStringCreateWithCString(kCFAllocatorDefault, "Flexible Image Transport System", kCFStringEncodingUTF8);
 	CFDictionaryAddValue(attributes, CFSTR("kMDItemKind"), cfvalue);
-
+	CFRelease(cfvalue);
 	free(filename);
 	success = true;	
     return success;
