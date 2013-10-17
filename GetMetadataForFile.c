@@ -145,7 +145,7 @@ void SetDateValueFromFITSHeader(const char* filename,
 //		printf("%i %i %i %i %i %f\n\n", gregDate.year, gregDate.month, gregDate.day, gregDate.hour, gregDate.minute, gregDate.second);
 
 		if ((gregDate.year > 0) && (gregDate.month > 0) && (gregDate.day > 0)) {
-			CFTimeZoneRef timeZone = CFTimeZoneCreateWithName(kCFAllocatorDefault, CFSTR("UT"), true);
+			CFTimeZoneRef timeZone = CFTimeZoneCreateWithName(kCFAllocatorDefault, CFSTR("GMT"), true);
 			CFAbsoluteTime absTime = CFGregorianDateGetAbsoluteTime(gregDate, timeZone);
 			CFDateRef date = CFDateCreate(kCFAllocatorDefault, absTime);
 
@@ -182,7 +182,7 @@ void SetStringValueFromFITSHeader(const char* filename,
 	
 	if (headerValue != NULL) {		
 		CFStringRef cfImporterAttrName = CFStringCreateWithCString(kCFAllocatorDefault, importerAttrName, kCFStringEncodingUTF8);
-		CFDictionaryAddValue(attributes, cfImporterAttrName, headerValue);
+		CFDictionarySetValue(attributes, cfImporterAttrName, headerValue);
 		CFRelease(headerValue);
 		CFRelease(cfImporterAttrName);
 	}
@@ -302,7 +302,7 @@ Boolean GetMetadataForFile(void* thisInterface,
 	
 	// ----- STANDARD kMDItemKind;	
 	CFStringRef cfvalue = CFStringCreateWithCString(kCFAllocatorDefault, "Flexible Image Transport System", kCFStringEncodingUTF8);
-	CFDictionaryAddValue(attributes, CFSTR("kMDItemKind"), cfvalue);
+	CFDictionarySetValue(attributes, CFSTR("kMDItemKind"), cfvalue);
 	CFRelease(cfvalue);
 	free(filename);
 	success = true;	

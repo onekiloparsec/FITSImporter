@@ -87,6 +87,7 @@
 				<string>public.image</string>
 				<string>public.data</string>
 				<string>public.composite-content</string>
+				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Flexible Image Transport System file</string>

@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cp -Rf ${BUILT_PRODUCTS_DIR}/FITSImporter.mdimporter ${HOME}/Library/Spotlight&#10;&#10;touch ${HOME}/Library/Spotlight/FITSImporter.mdimporter&#10;&#10;/usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter">
+               scriptText = "cp -Rf ${BUILT_PRODUCTS_DIR}/FITSImporter.mdimporter ${HOME}/Library/Spotlight&#10;&#10;touch ${HOME}/Library/Spotlight/FITSImporter.mdimporter&#10;&#10;/usr/bin/mdimport -r ${HOME}/Library/Spotlight/FITSImporter.mdimporter&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

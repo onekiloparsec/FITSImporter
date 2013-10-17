@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
- 
 <schema version="1.0" xmlns="http://www.apple.com/metadata"
                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                       xsi:schemaLocation="http://www.apple.com/metadata 
 					  file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
-            
     <attributes>
         <attribute name="gov_nasa_gsfc_fits_TargetName" type="CFString" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_Instrument" type="CFString" nosearch="false"/>
@@ -16,7 +14,6 @@
 		<attribute name="gov_nasa_gsfc_fits_LocalSiderealTime" type="CFString" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_UniversalTime" type="CFString" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_ArchiveFilename" type="CFString" nosearch="false"/>
-
 		<attribute name="gov_nasa_gsfc_fits_RightAscension" type="CFNumber" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_Declination" type="CFNumber" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_Airmass" type="CFNumber" nosearch="false"/>
@@ -31,11 +28,8 @@
         <attribute name="gov_nasa_gsfc_fits_Bitpix" type="CFNumber" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_MJDObs" type="CFNumber" nosearch="false"/>
 		<attribute name="gov_nasa_gsfc_fits_JulianDate" type="CFNumber" nosearch="false"/>
-
         <attribute name="gov_nasa_gsfc_fits_DateObs" type="CFDate" nosearch="false"/>
-
     </attributes>
-     
     <types>
         <type name="gov.nasa.gsfc.fits"> 
             <allattrs>
