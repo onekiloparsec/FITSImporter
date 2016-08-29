@@ -46,6 +46,8 @@
 				<string>dyn.ah62d4rv4ge81n7xgrf4a</string>
 				<string>dyn.ah62d4rv4ge80w5pgrf4hg</string>
 				<string>dyn.ah62d4rv4ge81n7xgrf4hg</string>
+				<string>dyn.ah62d46dzqm0gw23ssz1gw8brqz6gn25zsvu0e5dfhk2x43xmsu</string>
+				<string>dyn.ah62d46dzqm0gw23ssz1gw8brqz6gn25zsvu0e5dfhk2x43xmsv3u</string>
 			</array>
 		</dict>
 	</array>
@@ -54,7 +56,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>com.softtenebraslux.fitsimporter</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
