@@ -215,9 +215,9 @@ void SetNumberValueFromFITSHeader(const char* filename,
 				}
 									
 				// Work for either DMS or HMS, since the input format is kept. It is not a transformation, just a flattening.
-				number = sign * ( abs(CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 0))) + 
-									  CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 1)) / 60 + 
-									  CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 2)) / 3600 );
+				number = sign * ( fabs(CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 0))) +
+									   CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 1)) / 60 +
+									   CFStringGetDoubleValue(CFArrayGetValueAtIndex(dmsArray, 2)) / 3600 );
 
 			}
 
