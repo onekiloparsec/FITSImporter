@@ -1,8 +1,9 @@
 <h3 align="center">
-	<img src="http://onekilopars.ec/s/1kpcAstroComponents.png" width="100%" />
+	<img src="http://onekilopars.ec/wp-content/uploads/2018/07/1kpcProComponents.002.png" width="100%" />
 </h3>
 <p align="center">
 <a href="https://github.com/onekiloparsec/SwiftAA">SwiftAA</a> &bull;
+<a href="https://github.com/onekiloparsec/AA.js">AA.js</a> &bull;
 <a href="https://github.com/onekiloparsec/QLFits">QLFits</a> &bull;
 <b>FITSImporter</b> &bull; 
 <a href="https://github.com/onekiloparsec/ObjCFITSIO">ObjCFITSIO</a> 
